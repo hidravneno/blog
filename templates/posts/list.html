@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>All Posts</h1>
+<ul>
+    {% for post in object_list %}
+    <li>
+        <a href="{% url 'detail' post.pk %}">{{ post.title }}</a>
+        <a href="{% url 'edit' post.pk %}">Edit</a> |
+        <a href="{% url 'delete' post.pk %}">Delete</a>
+    </li>
+    {% empty %}
+    <li>No posts yet.</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'create' %}" class="btn btn-primary">Create New Post</a>
+{% endblock %}
