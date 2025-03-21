@@ -1,18 +1,19 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+
+
+{% block title %}{{ title }} Posts{% endblock title %}
 
 {% block content %}
-<h1>All Posts</h1>
-<ul>
-    {% for post in object_list %}
-    <li>
-        <a href="{% url 'detail' post.pk %}">{{ post.title }}</a>
-        <a href="{% url 'edit' post.pk %}">Edit</a> |
-        <a href="{% url 'delete' post.pk %}">Delete</a>
-    </li>
-    {% empty %}
-    <li>No posts yet.</li>
-    {% endfor %}
-</ul>
+<h1>{{ title }} Posts</h1>
+{% for post in post_list %}
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{ post.title }}</h5>
+        <h6 class="card-subtitle mb-2 text-body-secondary">{{ post.subtitle }}</h6>
+        <p class="card-text">{{ post.body | truncatechars:128 }}</p>
 
-<a href="{% url 'create' %}" class="btn btn-primary">Create New Post</a>
-{% endblock %}
+        <a href="{% url 'detail' post.id %}" class="card-link">Continue reading...</a>
+    </div>
+</div>
+{% endfor %}
+{% endblock content %}

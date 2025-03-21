@@ -1,0 +1,127 @@
+/* Spaceduck-inspired Bootstrap theme */
+:root {
+    --spaceduck-background: #0f172a; /* Azul noche elegante */
+    --spaceduck-foreground: #ecf0c1;
+    --spaceduck-cyan: #5fb3b3;
+    --spaceduck-green: #a7c080;
+    --spaceduck-yellow: #dbc074;
+    --spaceduck-orange: #e39b7b;
+    --spaceduck-pink: #d699b6;
+    --spaceduck-purple: #1e293b; /* Azul oscuro elegante para navbar */
+    --spaceduck-red: #e68183;
+}
+
+/* General Styles */
+body {
+    background-color: var(--spaceduck-background); /* Fondo negro/azul noche */
+    color: var(--spaceduck-foreground);
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: var(--spaceduck-purple); /* Azul oscuro para navbar */
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra elegante */
+}
+
+.navbar-brand, .nav-link {
+    color: var(--spaceduck-foreground) !important;
+}
+
+.nav-link:hover {
+    color: var(--spaceduck-cyan) !important;
+}
+
+/* Container Styles */
+.container {
+    background-color: var(--spaceduck-background); /* Fondo actualizado */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: var(--spaceduck-cyan);
+    border-color: var(--spaceduck-cyan);
+    color: var(--spaceduck-background);
+}
+
+.btn-primary:hover {
+    background-color: var(--spaceduck-green);
+    border-color: var(--spaceduck-green);
+    color: var(--spaceduck-background);
+}
+
+.btn-secondary {
+    background-color: var(--spaceduck-yellow);
+    border-color: var(--spaceduck-yellow);
+    color: var(--spaceduck-background);
+}
+
+.btn-secondary:hover {
+    background-color: var(--spaceduck-orange);
+    border-color: var(--spaceduck-orange);
+    color: var(--spaceduck-background);
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: var(--spaceduck-purple); /* Azul oscuro elegante */
+    padding: 5rem 0;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Call to Action Section */
+.cta-section {
+    background-color: var(--spaceduck-purple); /* Azul oscuro para CTA */
+    padding: 3rem 0;
+    text-align: center;
+}
+
+/* Custom Cards */
+.card {
+    background-color: #1e293b; /* Azul más oscuro para tarjetas */
+    border: 1px solid var(--spaceduck-cyan);
+    color: var(--spaceduck-foreground);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--spaceduck-purple);
+    color: var(--spaceduck-foreground);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--spaceduck-purple);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--spaceduck-cyan);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--spaceduck-green);
+}
