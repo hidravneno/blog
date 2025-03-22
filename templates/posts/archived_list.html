@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>{{ title }}  Posts</h2>
+<ul>
+  {% for post in post_list %}
+  <li>
+    <a href="{% url 'detail' post.id %}">{{ post.title }}</a>
+    (Archived)
+  </li>
+  {% empty %}
+  <li>No archived posts available.</li>
+  {% endfor %}
+</ul>
+<a href="{% url 'list' %}">Back to posts</a>
+{% endblock %}
