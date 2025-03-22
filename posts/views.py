@@ -29,7 +29,6 @@ class PostListView(ListView):
         return context
 
 
-# Vista para ver el detalle de una publicación
 class PostDetailView(UserPassesTestMixin, DetailView):
     template_name = "posts/detail.html"
     model = Post
@@ -47,7 +46,6 @@ class PostDetailView(UserPassesTestMixin, DetailView):
 
 
 
-# Vista para crear una nueva publicación
 class PostCreateView(LoginRequiredMixin, CreateView):
     template_name = "posts/new.html"
     model = Post
@@ -58,7 +56,6 @@ class PostCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-# Vista para actualizar una publicación
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     template_name = "posts/edit.html"
     model = Post
@@ -69,7 +66,6 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return post.author == self.request.user
 
 
-# Vista para eliminar una publicación
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     template_name = "posts/delete.html"
     model = Post
@@ -80,7 +76,6 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         return post.author == self.request.user
 
 
-# Vista para listar los borradores
 class DraftPostList(LoginRequiredMixin, ListView):
     template_name = "posts/draft_list.html"
     model = Post
@@ -98,7 +93,6 @@ class DraftPostList(LoginRequiredMixin, ListView):
         return context
 
 
-# Vista para listar publicaciones archivadas
 class ArchivedPostListView(LoginRequiredMixin, ListView):
     template_name = "posts/archived_list.html"
     model = Post
